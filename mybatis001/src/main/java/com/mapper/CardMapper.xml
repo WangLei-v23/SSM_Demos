@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.CardMapper">
+<!--手动配置缓存 加标签即可-->
+    <cache></cache>
+    <!--映射结果集和实体类 响应语句中的属性名也要与类中保持一致-->
+    <resultMap id="cardMap" type="com.entity.card">
+        <id property="userCno" column="cno"></id>
+        <result property="userName" column="name"></result>
+        <result property="userGrades" column="grades"></result>
+        <result property="userAge" column="age"></result>
+    </resultMap>
+
+<!--    <select id="get" parameterType="int" resultMap="cardMap">-->
+<!--        select * from card where age = #{userAge}-->
+<!--    </select>-->
+
+    <select id="findByCno" parameterType="String" resultMap="cardMap">
+        select * from  card where cno=#{userCno}
+    </select>
+
+    <select id="findAll" resultMap="cardMap">
+        select * from card
+    </select>
+
+    <insert id="save" parameterType="com.entity.card">
+        insert into card(cno,name,grades,age) values (#{userCno},#{userName},#{userGrades},#{userAge})
+    </insert>
+
+    <update id="updateCardName" parameterType="com.entity.card">
+        update card set name=#{userName} where cno=#{userCno}
+    </update>
+
+    <delete id="deleteByCno" parameterType="String">
+        delete from card where cno=#{userCno}
+    </delete>
+
+</mapper>

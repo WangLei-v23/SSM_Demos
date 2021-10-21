@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+    <!-- IOC配置 基于xml解析-->
+    <!--1 生成零件（创建对象 bean）2 组装零件（依赖注入） -->
+<!--    <bean id="UserController" class="com.xml.controller.UserController">-->
+<!--        <property name="userService" ref="UserService"></property>-->
+<!--    </bean>-->
+
+<!--    <bean id="UserService" class="com.xml.service.impl.UserServiceImpl">-->
+<!--        <property name="userDao" ref="UserDao"></property>-->
+<!--    </bean>-->
+
+<!--    <bean id="UserDao" class="com.xml.dao.impl.UserDaoImpl"></bean>-->
+
+    <!-- IOC配置 基于注解和xml解析 只需要注入需要扫描的父包即可-->
+    <context:component-scan base-package="com.aop"></context:component-scan>
+    <!--aop切面动态代理-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+</beans>

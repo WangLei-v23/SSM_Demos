@@ -1,0 +1,17 @@
+com\xml\service\UserService.class
+com\xml\controller\UserController.class
+com\xml\dao\impl\UserDaoImpl.class
+com\test\testMyApplocationContext.class
+com\aop\calImpl.class
+com\aop\MyInvocationHandler.class
+com\aop\Test.class
+com\xml\service\impl\UserServiceImpl.class
+com\test\test01.class
+com\configurations\UserConfig.class
+com\aop\loggerAspects.class
+com\xml\dao\UserDao.class
+com\entity\User.class
+com\mySpringXml\MyApplicationContext.class
+com\aop\cal.class
+com\xml\Test.class
+com\mySpringXml\dto\UserDto.class
